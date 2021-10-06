@@ -47,6 +47,8 @@
 |localdata						|Array					| 					 |							|数据，[详情](https://gitee.com/dcloud/datacom)|
 |preload 							|Boolean				| true/false |	false				|预加载数据|
 |readonly 						|Boolean				| true/false |	false				|是否禁用|
+|clear-icon 						|Boolean				| true/false |	true				|是否显示清除按钮|
+|ellipsis 						|Boolean				| true/false |	true				|是否隐藏 tab 标签过长的文本|
 |step-searh 					|Boolean				| true/false |	true				|分步查询时，点击节点请求数据|
 |step-search-url			|String					| 					 |							|分步查询时，动态加载云端数据url格式，`https://xxx.com/{parentValue}`(当前版本暂不支持，下版支持)|
 |self-field						|String					| 					 |							|分步查询时当前字段名称|
@@ -56,7 +58,7 @@
 |where								|String					| 					 |							|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby							|String					| 					 |							|排序字段及正序倒叙设置|
 |popup-title					|String					| 					 |							|弹出层标题|
-
+|map									|Object					|						 |{text:'text',value:'value'}|字段映射，将text/value映射到数据中的其他字段|
 
 > ****
 > `collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db)
@@ -73,6 +75,24 @@
 |@popupopened			|EventHandle		| 弹出层弹出时触发																|
 |@popupclosed			|EventHandle		| 弹出层关闭时触发																|
 
+### DataPicker Methods
+
+|方法称名	|说明|参数|
+|:-:|:-:|:-:|
+|show|打开弹出层|-|
+|hide|关闭弹出层|-|
+|clear|清除已选项|-|
+
+**使用方法：**
+```js
+this.$refs.picker.show() // `picker` 为组件的 ref 名称
+```
+
+### DataPicker Slots
+
+|名称|说明|					
+|:-:|:-:|						
+|default|覆盖显示框内容|
 
 
 ### 基本用法
